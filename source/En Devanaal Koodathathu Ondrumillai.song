@@ -1,0 +1,69 @@
+---
+title: என் தேவனால் கூடாதது ஒன்றுமில்லை     # The main title used for identifying the song (indexed)
+title-en: En Devanaal Koodathathu Ondrumillai   # The english title used for identifying the song (indexed), if not exists title is used
+names:                                          # alt titles, (in alt spelling or alt languages) (indexed)
+  - En Devanaal Koodathathu Ondrumillai
+  - என் தேவனால் கூடாதது ஒன்றுமில்லை
+keywords:                                       # keywords used to identify the song (indexed)
+  - en devanaal
+  - avar vaarthayil
+  - paalaivanamaana vaazhkayil
+locale: ta_IN                                   # the song lyric language - Tamil (India)
+serial: 8                                       # the song number (indexed)
+font: TAU_Elango_Ragham                         # the font-family used to render the content
+font-alt: Verdana                               # the fallback font to use when primary font is not found
+album: unknown                                  # the album the song belongs to
+author: unknown                                 # the author who wrote this song
+category: FGPC                                  # the category of this song
+genre: reggae                                   # the genre of this song
+tags:                                           # tags used to tag the song
+  - abc
+  - def
+year: 2020                                      # the year the song was released
+copyright: Copy owner                           # The song copyright
+version: initial                                # the version of the song
+revison: initial                                # the number of revison of the song
+---
+
+## Intro
+
+என் தேவனால் கூடாதது\
+ஒன்றுமில்லை - 4
+
+## Chorus
+
+அவர் வார்த்தையில் உண்மை\
+அவர் செயல்களில் வல்லமை\
+என் தேவனால் கூடாதது\
+ஒன்றும் இல்லை - 2
+
+## Verses
+
+### 1
+
+பாலைவனமான வாழ்க்கையில்\
+மழையை தருபவர்\
+பாதைகாட்டும் மேய்ப்பனாய்\
+உடன் வருபவர் - 2
+
+### 2
+
+ஆழங்களில் அமிழ்ந்திடாமல்\
+என்னை காப்பவர்\
+ஆற்றி தேற்றி அன்பாய்\
+என்னை அணைப்பவர் - 2
+
+### 3
+
+சத்துருமுன் விழாந்திடாமல்\
+என்னை காப்பவர்\
+சத்துவம் தந்து என்னை\
+நிற்க செய்பவர் - 2
+
+### 4
+
+சகலத்தையும் நேர்தியாக\
+எனக்கு செய்பவர்\
+சர்வ வல்ல தேவனாய்\
+உடன் இருப்பவர் - 2
+
