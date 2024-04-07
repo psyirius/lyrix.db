@@ -9,12 +9,17 @@ npm i -g npm@latest pnpm
 
 Song sources are inside the `source` directory.
 
+To install dependencies:
+```sh
+pnpm install
+```
+
 To compile into verseview database:
 ```sh
 pnpm build
 ```
 
-The resulting verseview database file will be in the `out` directory.
+The resulting verseview database file will be in the `dist` directory.
 
 Notes:
-- Use Markdown styling for the *.song file for some better syntax highlighting
+- Use Markdown syntax highlighting for the `*.song` file for some better DX :P
