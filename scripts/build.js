@@ -8,6 +8,7 @@ import remarkFrontmatter from 'remark-frontmatter'
 import remarkStringify from 'remark-stringify'
 import remarkParse from 'remark-parse'
 import remarkBreaks from 'remark-breaks'
+import {findAllAfter} from 'unist-util-find-all-after'
 
 // where the *.song files are
 const SONG_SOURCE_DIR = path.resolve(import.meta.dirname, '..', 'source');
@@ -23,7 +24,7 @@ const parser = unified()
     { type: 'meta', marker: '-' }, // meta is in yaml
   ]);
 
-  // enumerate all *.song files under the source dir
+// enumerate all *.song files under the source dir
 const songFiles = glob.sync([
   posixPath(path.join(SONG_SOURCE_DIR, '**/*.song'))
 ], {
@@ -52,6 +53,11 @@ for (const filename of songFiles) {
   // console.log('Metadata:', metadata)
 
   const paragraphs = root.children.filter(e => e.type === 'paragraph')
+  const stanzaBullets = root.children.filter(e => e.type === 'list' && e.ordered).map(e => {
+    findAllAfter(root, e, (n, i, p) => {
+      paragraphs.find(e => e.type === 'paragraph')
+    })
+  })
 
   const slides = paragraphs.map(e => {
     return e.children.map(e => {
