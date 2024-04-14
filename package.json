@@ -11,7 +11,8 @@
   },
   "scripts": {
     "build": "node ./scripts/build",
-    "pro-conv": "node ./scripts/pro-conv"
+    "pro-conv": "node ./scripts/pro-conv",
+    "vvx-conv": "node ./scripts/vvx-conv"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "@jacksontian/rtf-parser": "^0.1.0",
     "@keyrinrin/rtf-util": "^1.0.9",
     "fast-glob": "^3.3.2",
+    "fast-xml-parser": "^4.3.6",
     "iconv-lite": "^0.6.3",
     "pumpify": "^2.0.1",
     "read-rtf": "^1.1.3",
