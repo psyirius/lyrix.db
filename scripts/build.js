@@ -80,7 +80,7 @@ vvSongDB.ele('type').txt('XMLsong');
 vvSongDB.ele('disclaimer').txt('...');
 
 songs.forEach(({ metadata, slides }) => {
-  const slidesSet = slides.join('<slide>');
+  const slidesSet = slides.map(e => e + '<slide>').join('');
 
   vvSongDB.ele('song')
     .ele('name').txt(metadata['title-en']).up()
