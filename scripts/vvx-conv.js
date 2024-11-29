@@ -44,7 +44,7 @@ async function exec() {
 
         console.log('Total: ', songs.length)
 
-        const TARGET_CATEGORY = '1 fgpc';
+        const TARGET_CATEGORY = '1_FGPC_2024_(601 - 700)';
 
         for (const song of songs) {
             if (song.category !== TARGET_CATEGORY) {

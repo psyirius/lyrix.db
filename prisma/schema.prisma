@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Song {
+  id Int @id @default(autoincrement())
+
+  title   String?
+  content String?
+  youtube String?
+  artist  String?
+  genre   String?
+  album   String?
+  scale   String?
+  beat    String?
+  tempo   String?
+  chords  String?
+  karoke  String?
+
+  @@map("songs")
+}

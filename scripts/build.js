@@ -30,6 +30,8 @@ const songFiles = glob.sync([
 ], {
   dot: true,
   absolute: true,
+  ignore: [
+  ],
 });
 
 const songs = [];
@@ -98,7 +100,7 @@ songs.forEach(({ metadata, slides }) => {
     .ele('slideseq').dat('').up()
     .ele('subcat').dat(metadata['serial']).up()  // wierd: subcat is used as song number
     .ele('slide').dat(slidesSet).up()
-    .ele('slide2').dat(slides.map(e => '').join('<slide>')).up()
+    .ele('slide2').dat(slides.map(_ => '').join('<slide>')).up()
 })
 
 // convert the XML tree to string
