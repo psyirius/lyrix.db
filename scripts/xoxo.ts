@@ -10,7 +10,7 @@ import remarkStringify from 'remark-stringify'
 import remarkFrontmatter from 'remark-frontmatter'
 import type { RootContent } from 'mdast'
 
-// where the *.song files are
+// where the *.lyrix files are
 const SONG_SOURCE_DIR = path.resolve(import.meta.dirname, '..', 'source');
 
 // to fix fast-glob's posix-style path processing
@@ -24,9 +24,9 @@ const parser = unified()
         { type: 'meta', marker: '-' }, // meta is in yaml
     ]);
 
-// enumerate all *.song files under the source dir
+// enumerate all *.lyrix files under the source dir
 const songFiles = glob.sync([
-    posixPath(path.join(SONG_SOURCE_DIR, 'Karunaiyin Pravagam', '**/*.song'))
+    posixPath(path.join(SONG_SOURCE_DIR, 'Karunaiyin Pravagam', '**/*.lyrix'))
 ], {
     dot: true,
     absolute: true,
@@ -49,8 +49,8 @@ for (const filename of songFiles) {
     if (!metaNode) {
         throw new Error("Missing item: Metadata!")
     }
-    const metadata = YAML.parse(metaNode.value)
 
+    // const metadata = YAML.parse(metaNode.value)
     // console.log('Metadata:', metadata)
 
     const children: RootContent[] = [];

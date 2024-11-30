@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import YAML from 'yaml'
 
-// where the *.song files are
+// where the *.lyrix files are
 const SONG_SOURCE_DIR = path.resolve(import.meta.dirname, '..', 'source');
 
 // where the vv xml db files are
@@ -45,7 +45,7 @@ async function exec() {
                 }
             });
 
-            const outFile = path.resolve(OUT_DIR, name + '.song');
+            const outFile = path.resolve(OUT_DIR, name + '.lyrix');
 
             const meta = {
                 "title": name,

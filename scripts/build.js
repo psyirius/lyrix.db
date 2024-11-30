@@ -10,7 +10,7 @@ import remarkParse from 'remark-parse'
 import remarkBreaks from 'remark-breaks'
 import {findAllAfter} from 'unist-util-find-all-after'
 
-// where the *.song files are
+// where the *.lyrix files are
 const SONG_SOURCE_DIR = path.resolve(import.meta.dirname, '..', 'source');
 
 // to fix fast-glob's posix-style path processing
@@ -24,9 +24,9 @@ const parser = unified()
     { type: 'meta', marker: '-' }, // meta is in yaml
   ]);
 
-// enumerate all *.song files under the source dir
+// enumerate all *.lyrix files under the source dir
 const songFiles = glob.sync([
-  posixPath(path.join(SONG_SOURCE_DIR, '**/*.song'))
+  posixPath(path.join(SONG_SOURCE_DIR, '**/*.lyrix'))
 ], {
   dot: true,
   absolute: true,

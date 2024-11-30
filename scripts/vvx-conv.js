@@ -4,7 +4,7 @@ import YAML from 'yaml'
 import glob from 'fast-glob'
 import {XMLParser} from 'fast-xml-parser'
 
-// where the *.song files are
+// where the *.lyrix files are
 const SONG_SOURCE_DIR = path.resolve(import.meta.dirname, '..', 'source');
 
 // where the vv xml db files are
@@ -70,7 +70,7 @@ async function exec() {
                     .filter(slide => Boolean(slide.trim()))
                 );
 
-            const outFile = path.resolve(OUT_DIR, name + '.song');
+            const outFile = path.resolve(OUT_DIR, name + '.lyrix');
 
             const meta = {
                 "title": name,

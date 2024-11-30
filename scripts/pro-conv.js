@@ -112,7 +112,7 @@ async function proToSlides(presentation) {
     return slideStrList.map(makeSlideList);
 }
 
-// where the *.song files are
+// where the *.lyrix files are
 const SONG_SOURCE_DIR = path.resolve(import.meta.dirname, '..', 'source');
 
 // where the pro json files are
@@ -124,7 +124,7 @@ const OUT_DIR = path.resolve(SONG_SOURCE_DIR, 'Uncategorized');
 // to fix fast-glob's posix-style path processing
 const posixPath = (p) => p.split(path.sep).join(path.posix.sep);
 
-// enumerate all *.song files under the source dir
+// enumerate all *.lyrix files under the source dir
 const songFiles = glob.sync([
     posixPath(path.join(SOURCE_DIR, '**/*.json'))
 ], {
@@ -160,7 +160,7 @@ async function exec() {
 
         const slides = await proToSlides(presentation);
 
-        const outFile = path.resolve(OUT_DIR, name + '.song');
+        const outFile = path.resolve(OUT_DIR, name + '.lyrix');
 
         const meta = {
             "title": name,

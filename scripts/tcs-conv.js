@@ -3,7 +3,7 @@ import path from 'node:path'
 import YAML from 'yaml'
 import { PrismaClient } from '@prisma/client'
 
-// where the *.song files are
+// where the *.lyrix files are
 const SONG_SOURCE_DIR = path.resolve(import.meta.dirname, '..', 'source');
 
 const OUT_DIR = path.resolve(SONG_SOURCE_DIR, 'Tamil Christian Songs');
@@ -38,7 +38,7 @@ async function exec() {
                     .map(line => line.trim())
             );
 
-        const outFile = path.resolve(OUT_DIR, song.id + '.song');
+        const outFile = path.resolve(OUT_DIR, song.id + '.lyrix');
 
         const meta = {
             "title": name,

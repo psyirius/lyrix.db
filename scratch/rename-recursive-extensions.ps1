@@ -1,0 +1,1 @@
+Get-ChildItem -Path.\ -Filter *.song -Recurse | Rename-Item -NewName {$_.Name -replace '\.song$','.lyrix'}
