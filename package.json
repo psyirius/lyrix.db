@@ -16,6 +16,7 @@
     "jsn-conv": "node ./scripts/fgpc-json-conv",
     "tcs-conv": "node ./scripts/tcs-conv",
     "script:xoxo": "tsx ./scripts/xoxo.ts",
+    "scrapper:tcs-org": "tsx ./scripts/scrappers/tamilchristiansongs-org.ts",
     "prisma:db-pull": "prisma db pull",
     "prisma:generate": "prisma generate"
   },
@@ -29,6 +30,8 @@
     "@prisma/client": "^6.0.0",
     "fast-glob": "^3.3.2",
     "micromatch": "^4.0.8",
+    "axios": "^1.7.8",
+    "cheerio": "^1.0.0",
     "cross-spawn": "^7.0.6",
     "fast-xml-parser": "^4.5.0",
     "fonteditor-core": "^2.4.1",
