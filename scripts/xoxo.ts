@@ -26,7 +26,7 @@ const parser = unified()
 
 // enumerate all *.song files under the source dir
 const songFiles = glob.sync([
-    posixPath(path.join(SONG_SOURCE_DIR, '**/*.song'))
+    posixPath(path.join(SONG_SOURCE_DIR, 'Karunaiyin Pravagam', '**/*.song'))
 ], {
     dot: true,
     absolute: true,
