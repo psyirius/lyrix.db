@@ -5,3 +5,8 @@ __pycache__/
 node_modules/
 dist/
 !dist/.gitkeep
+
+.tmp
+
+.env*
+!.env*.example

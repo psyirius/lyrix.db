@@ -11,13 +11,15 @@
   },
   "scripts": {
     "build": "node ./scripts/build",
-    "pro-conv": "node ./scripts/pro-conv",
-    "vvx-conv": "node ./scripts/vvx-conv",
-    "jsn-conv": "node ./scripts/fgpc-json-conv",
-    "tcs-conv": "node ./scripts/tcs-conv",
-    "script:reformat-sources": "tsx ./scripts/reformat-sources.ts",
-    "script:port-legacy": "tsx ./scripts/from-legacy-song.ts",
-    "scrapper:tcs-org": "tsx ./scripts/scrappers/tamilchristiansongs-org.ts",
+    "script:pro-conv": "dotenvx run -- node ./scripts/pro-conv",
+    "script:vvx-conv": "dotenvx run -- node ./scripts/vvx-conv",
+    "script:jsn-conv": "dotenvx run -- node ./scripts/fgpc-json-conv",
+    "script:tcs-conv": "dotenvx run -- tsx ./scripts/tcs-conv.ts",
+    "script:port-legacy": "dotenvx run -- tsx ./scripts/from-legacy-song.ts",
+    "script:reformat-sources": "dotenvx run -- tsx ./scripts/reformat-sources.ts",
+    "script:transliterate-gemini": "dotenvx run -- tsx scripts/transliterate-gemini.ts",
+    "script:transliterate-github": "dotenvx run -- tsx scripts/transliterate-github.ts",
+    "scrapper:tcs-org": "dotenvx run -- tsx ./scripts/scrappers/tamilchristiansongs-org.ts",
     "prisma:db-pull": "prisma db pull",
     "prisma:generate": "prisma generate"
   },
@@ -28,6 +30,7 @@
     "@extensionengine/rtf-parser": "^1.0.1",
     "@jacksontian/rtf-parser": "^0.1.0",
     "@keyrinrin/rtf-util": "^1.1.8",
+    "@google/generative-ai": "^0.21.0",
     "@prisma/client": "^6.0.0",
     "fast-glob": "^3.3.2",
     "micromatch": "^4.0.8",
@@ -53,7 +56,11 @@
     "unist-util-find-all-after": "^5.0.0",
     "hast-util-select": "^6.0.3",
     "xmlbuilder2": "^3.1.1",
-    "yaml": "^2.6.1"
+    "yaml": "^2.6.1",
+    "@azure-rest/ai-inference": "latest",
+    "@azure-rest/core-client": "latest",
+    "@azure/core-auth": "latest",
+    "@azure/core-sse": "latest"
   },
   "devDependencies": {
     "@types/mdast": "^4.0.4",
@@ -62,6 +69,7 @@
     "ts-node": "^10.9.2",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
+    "@dotenvx/dotenvx": "^1.26.0",
     "typescript": "^5.7.2",
     "zx": "^8.2.4"
   }

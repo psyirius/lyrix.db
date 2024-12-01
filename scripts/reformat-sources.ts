@@ -26,13 +26,23 @@ const parser = unified()
 
 // enumerate all *.lyrix files under the source dir
 const songFiles = glob.sync([
-    posixPath(path.join(SONG_SOURCE_DIR, '**/*.lyrix'))
+    posixPath(path.join(SONG_SOURCE_DIR, 'Tamil Christian Songs', '**/*.lyrix'))
 ], {
     dot: true,
     absolute: true,
     ignore: [
     ],
 });
+
+const nameMap = new Map<string, string>();
+
+const cs = JSON.parse(
+    fs.readFileSync(path.resolve(SONG_SOURCE_DIR, '..', '.tmp', 'tcs-songs.tanglish-names.json'), 'utf-8')
+) as Record<string, string>;
+
+for (const [k, v] of Object.entries(cs)) {
+    nameMap.set(k, v);
+}
 
 // Fixes the verse numbering in the song files
 for (const filename of songFiles) {
@@ -48,12 +58,27 @@ for (const filename of songFiles) {
         throw new Error("Missing item: Metadata!")
     }
 
-    // const metadata = YAML.parse(metaNode.value)
-    // console.log('Metadata:', metadata)
+    let processed = true;
+    let newFilename: string | undefined = undefined;
+
+    const metadata = YAML.parse(metaNode.value)
+    {
+        // console.log('Metadata:', metadata)
+
+        const tamTitle = metadata['title'];
+        const engTitle = nameMap.get(tamTitle);
+
+        if (!engTitle) {
+            throw new Error(`Title not found: ${tamTitle}`);
+        }
+
+        metadata['title-en'] = engTitle;
+
+        newFilename = engTitle;
+    }
+    metaNode.value = YAML.stringify(metadata);
 
     const children: RootContent[] = [];
-
-    let processed = false;
 
     for (const node of root.children) {
         switch (node.type) {
@@ -107,4 +132,17 @@ for (const filename of songFiles) {
     const content = parser.stringify({ type: 'root', children });
 
     fs.writeFileSync(filename, content, 'utf-8');
+
+    if (newFilename) {
+        const sanitized = newFilename
+            .replace(/[?]/g, ' ');
+
+        const newFilenamePath = path.resolve(path.dirname(filename), `${sanitized}.lyrix`);
+
+        try {
+            fs.renameSync(filename, newFilenamePath);
+        } catch (e) {
+            console.error('Error renaming:', filename, '->', newFilenamePath);
+        }
+    }
 }
