@@ -15,7 +15,8 @@
     "vvx-conv": "node ./scripts/vvx-conv",
     "jsn-conv": "node ./scripts/fgpc-json-conv",
     "tcs-conv": "node ./scripts/tcs-conv",
-    "script:xoxo": "tsx ./scripts/xoxo.ts",
+    "script:reformat-sources": "tsx ./scripts/reformat-sources.ts",
+    "script:port-legacy": "tsx ./scripts/from-legacy-song.ts",
     "scrapper:tcs-org": "tsx ./scripts/scrappers/tamilchristiansongs-org.ts",
     "prisma:db-pull": "prisma db pull",
     "prisma:generate": "prisma generate"
