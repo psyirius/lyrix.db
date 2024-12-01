@@ -91,7 +91,7 @@ songs.forEach(({ metadata, slides }) => {
     .ele('font').txt(metadata['font']).up()
     .ele('font2').txt(metadata['font-alt']).up()
     .ele('bkgnd').txt('null').up()
-    .ele('yvideo').txt('').up()
+    .ele('yvideo').txt(metadata['font'] ? `https://youtu.be/${metadata['youtube']}` : '').up()
     .ele('timestamp').txt('5/28/2020  17:34').up()
     .ele('key').txt('').up()
     .ele('copyright').txt(metadata['copyright']).up()
