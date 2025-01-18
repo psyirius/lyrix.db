@@ -15,6 +15,7 @@
     "script:vvx-conv": "dotenvx run -- node ./scripts/vvx-conv",
     "script:jsn-conv": "dotenvx run -- node ./scripts/fgpc-json-conv",
     "script:tcs-conv": "dotenvx run -- tsx ./scripts/tcs-conv.ts",
+    "script:kcc-conv": "dotenvx run -- tsx ./scripts/kcc-conv.ts",
     "script:port-legacy": "dotenvx run -- tsx scripts/port-legacy.ts",
     "script:reformat-sources": "dotenvx run -- tsx ./scripts/reformat-sources.ts",
     "script:transliterate-gemini": "dotenvx run -- tsx scripts/transliterate-gemini.ts",

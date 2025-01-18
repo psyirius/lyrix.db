@@ -26,7 +26,7 @@ const parser = unified()
 
 // enumerate all *.lyrix files under the source dir
 const songFiles = glob.sync([
-    posixPath(path.join(SONG_SOURCE_DIR, 'Tamil Christian Songs', '**/*.lyrix'))
+    posixPath(path.join(SONG_SOURCE_DIR, 'Kirubasanam SongBook', '**/*.lyrix'))
 ], {
     dot: true,
     absolute: true,
@@ -37,7 +37,7 @@ const songFiles = glob.sync([
 const nameMap = new Map<string, string>();
 
 const cs = JSON.parse(
-    fs.readFileSync(path.resolve(SONG_SOURCE_DIR, '..', '.tmp', 'tcs-songs.tanglish-names.json'), 'utf-8')
+    fs.readFileSync(path.resolve(SONG_SOURCE_DIR, '..', '.tmp', 'kcc-songs.tanglish-names.json'), 'utf-8')
 ) as Record<string, string>;
 
 for (const [k, v] of Object.entries(cs)) {
@@ -74,7 +74,7 @@ for (const filename of songFiles) {
 
         metadata['title-en'] = engTitle;
 
-        newFilename = engTitle;
+        // newFilename = engTitle;
     }
     metaNode.value = YAML.stringify(metadata);
 

@@ -106,7 +106,7 @@ async function transliterate(inputs: string[]) {
     return result;
 }
 
-const INP_FILE = path.resolve(INPUT_DIR, 'tcs-songs.tamil-names.json');
+const INP_FILE = path.resolve(INPUT_DIR, 'kcc-songs.tamil-names.json');
 if (!fs.existsSync(INP_FILE)) {
     throw new Error('Input file not found: ' + INP_FILE);
 }
@@ -116,7 +116,7 @@ const todoNames = JSON.parse(_todoNames) as string[];
 !(async function exec(chunkSize = 250) {
     console.log('Processing Chunk:', chunkSize);
 
-    const OUT_FILE = path.resolve(INPUT_DIR, 'tcs-songs.tanglish-names.json');
+    const OUT_FILE = path.resolve(INPUT_DIR, 'kcc-songs.tanglish-names.json');
     const doneMap = (fs.existsSync(OUT_FILE) ? JSON.parse(fs.readFileSync(OUT_FILE, 'utf-8')) : {}) as Record<string, string>;
 
     // collect not done names
