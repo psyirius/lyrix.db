@@ -181,7 +181,10 @@ console.log(cache.size)
 
 function dumpCache() {
     const _data = Array.from(cache.values())
-    const data = _.uniqBy(_data, (item) => item.id);
+    const data = _.sortBy(
+        _.uniqBy(_data, (item) => item.id),
+        (item) => item.id
+    );
     fs.writeFileSync(dumpFN, JSON.stringify(data, null, 2))
 }
 
@@ -206,4 +209,4 @@ getByArtist('gersson-edinbaro/page/2').then(async (songs) => {
     Promise.all(tasks).then(() => {
         dumpCache()
     })
-})
+});
